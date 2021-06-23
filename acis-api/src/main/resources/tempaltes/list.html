@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>birthday</th>
+            <th>sex</th>
+            <th>addtess</th>
+        </tr>
+        <tr th:each="user:${pageInfo.list}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.birthday}"></td>
+            <td th:text="${user.sex}"></td>
+            <td th:text="${user.addtess}"></td>
+        </tr>
+    </table>
+    <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+    <a th:href="@{/getAllPerson}">首页</a>
+    <a th:href="@{/getAllPerson(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
+    <a th:href="@{/getAllPerson(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
+    <a th:href="@{/getAllPerson(pageNum=${pageInfo.pages})}">尾页</a>
+</div>
+</body>
+</html>

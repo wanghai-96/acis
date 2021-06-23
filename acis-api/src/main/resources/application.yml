@@ -1,0 +1,34 @@
+sequence:
+  workerId: 0
+
+server:
+  port: 8090
+spring:
+  application:
+    name: acis-api
+  profiles:
+    #读取不同环境的配置
+    #日志分为：log_dev(只打印到控制台)、log_prod(打印到控制台、输出到日志文件)
+    active: prod
+  #设置上传文件的大小
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+#下面的内容主要是测试分页效果
+#  mvc:
+#    static-path-pattern: /static/**
+#    view:
+#      prefix: classpath:/tempaltes/
+#      suffix: .html
+#  thymeleaf:
+#    encoding: UTF-8
+#    mode: HTML5
+#    prefix: classpath:/tempaltes/
+#    servlet:
+#      content-type: text/html
+#    suffix: .html
+#  main:
+#    allow-bean-definition-overriding: true
+
