@@ -55,4 +55,12 @@ public class DataSourceController {
                            @ApiParam( name="className",value="表对应字段名称",required=true) String className){
         return R.success(ResultCode.SUCCESS);
     }
+
+
+    public static void main(String[] args) {
+
+        String gitTest = "如何使用idea来进行 git的功能回退_____A"
+
+
+    }
 }
